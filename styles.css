@@ -1,0 +1,36 @@
+:root { --bg:#0b0c10; --card:#12151c; --text:#e7ecf3; --muted:#9aa4b2; --border:#232834; --r:16px; }
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial}
+.wrap{max-width:1100px;margin:0 auto;padding:22px}
+h1{margin:6px 0 6px}
+.sub{margin:0 0 14px;color:var(--muted)}
+.search{width:100%;padding:12px 12px;border-radius:12px;border:1px solid var(--border);background:#0f1116;color:var(--text);outline:none}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;cursor:pointer}
+.card img{width:100%;height:260px;object-fit:cover;display:block}
+.card .pad{padding:10px}
+.card .id{font-weight:700}
+.card .meta{color:var(--muted);font-size:13px;margin-top:4px}
+
+.modal.hidden{display:none}
+.modal{position:fixed;inset:0;z-index:50}
+.backdrop{position:absolute;inset:0;background:rgba(0,0,0,.65)}
+.modalCard{position:relative;width:min(980px,calc(100% - 28px));margin:18px auto;background:#0f1116;border:1px solid var(--border);border-radius:18px;overflow:hidden}
+.close{position:absolute;top:10px;right:10px;border:1px solid var(--border);background:rgba(255,255,255,.05);color:var(--text);border-radius:12px;padding:10px 12px;cursor:pointer}
+.modalBody{display:grid;grid-template-columns:1.25fr 1fr}
+.viewer{padding:16px;border-right:1px solid var(--border)}
+.viewer img{width:100%;height:420px;object-fit:cover;border-radius:14px;border:1px solid var(--border)}
+.thumbs{display:flex;gap:10px;margin-top:12px;overflow:auto;padding-bottom:6px}
+.thumbs img{width:76px;height:76px;object-fit:cover;border-radius:12px;border:1px solid var(--border);cursor:pointer;opacity:.85}
+.thumbs img.active{outline:2px solid rgba(255,255,255,.6);opacity:1}
+
+.info{padding:18px}
+.muted{color:var(--muted)}
+.btn{display:inline-block;margin-top:10px;padding:12px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:var(--text);text-decoration:none}
+
+@media(max-width:860px){
+  .modalBody{grid-template-columns:1fr}
+  .viewer{border-right:none;border-bottom:1px solid var(--border)}
+  .viewer img{height:360px}
+}
